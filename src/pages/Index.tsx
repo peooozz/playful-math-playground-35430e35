@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FloatingDecorations } from "@/components/FloatingDecorations";
-import { ModuleTabs } from "@/components/ModuleTabs";
+import { ModuleTabs, type ModuleType } from "@/components/ModuleTabs";
 import { NumbersModule } from "@/components/NumbersModule";
 import { AdditionModule } from "@/components/AdditionModule";
 import { SubtractionModule } from "@/components/SubtractionModule";
-
-type ModuleType = "numbers" | "addition" | "subtraction";
+import { WorksheetModule } from "@/components/worksheet/WorksheetModule";
 
 const Index = () => {
-  const [activeModule, setActiveModule] = useState<ModuleType>("numbers");
+  const [activeModule, setActiveModule] = useState<ModuleType>("worksheet");
 
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
@@ -70,6 +69,7 @@ const Index = () => {
           transition={{ duration: 0.3 }}
           className="pb-10"
         >
+          {activeModule === "worksheet" && <WorksheetModule />}
           {activeModule === "numbers" && <NumbersModule />}
           {activeModule === "addition" && <AdditionModule />}
           {activeModule === "subtraction" && <SubtractionModule />}

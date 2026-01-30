@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Hash, Plus, Minus } from "lucide-react";
+import { Hash, Plus, Minus, FileText } from "lucide-react";
 
-type ModuleType = "numbers" | "addition" | "subtraction";
+export type ModuleType = "numbers" | "addition" | "subtraction" | "worksheet";
 
 interface ModuleTabsProps {
   activeModule: ModuleType;
@@ -9,6 +9,14 @@ interface ModuleTabsProps {
 }
 
 const tabs = [
+  { 
+    id: "worksheet" as ModuleType, 
+    label: "Worksheet", 
+    emoji: "📝",
+    icon: FileText,
+    color: "bg-gradient-to-r from-blue-500 to-purple-500",
+    hoverColor: "hover:from-blue-600 hover:to-purple-600"
+  },
   { 
     id: "numbers" as ModuleType, 
     label: "Numbers", 
