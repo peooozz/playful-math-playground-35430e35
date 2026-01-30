@@ -1,96 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Warm pastel background */
+    --background: 45 100% 96%;
+    --foreground: 280 40% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 280 40% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 280 40% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Playful pink */
+    --primary: 340 82% 62%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft blue */
+    --secondary: 200 80% 70%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 45 40% 90%;
+    --muted-foreground: 280 20% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Sunny yellow */
+    --accent: 45 95% 65%;
+    --accent-foreground: 280 40% 25%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 45 40% 85%;
+    --input: 45 40% 85%;
+    --ring: 340 82% 62%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Rainbow colors for cards */
+    --rainbow-red: 0 85% 60%;
+    --rainbow-orange: 25 95% 58%;
+    --rainbow-yellow: 45 95% 55%;
+    --rainbow-green: 145 70% 50%;
+    --rainbow-teal: 175 70% 45%;
+    --rainbow-blue: 210 90% 60%;
+    --rainbow-purple: 270 70% 60%;
+    --rainbow-pink: 330 85% 65%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Success/Feedback colors */
+    --success: 145 70% 50%;
+    --success-foreground: 0 0% 100%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Module tab colors */
+    --tab-numbers: 340 82% 62%;
+    --tab-addition: 145 70% 50%;
+    --tab-subtraction: 210 90% 60%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Shadows */
+    --shadow-card: 0 8px 30px -10px hsl(280 40% 25% / 0.15);
+    --shadow-button: 0 4px 15px -3px hsl(340 82% 62% / 0.4);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 280 30% 12%;
+    --foreground: 45 100% 96%;
+    --card: 280 25% 18%;
+    --card-foreground: 45 100% 96%;
+    --popover: 280 25% 18%;
+    --popover-foreground: 45 100% 96%;
+    --primary: 340 82% 62%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 80% 70%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 280 20% 25%;
+    --muted-foreground: 45 40% 70%;
+    --accent: 45 95% 65%;
+    --accent-foreground: 280 40% 15%;
+    --border: 280 20% 25%;
+    --input: 280 20% 25%;
+    --ring: 340 82% 62%;
   }
 }
 
@@ -100,6 +91,181 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-nunito;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-fredoka font-bold;
+  }
+}
+
+@layer utilities {
+  /* Rainbow gradient text */
+  .text-rainbow {
+    background: linear-gradient(
+      90deg,
+      hsl(0, 85%, 60%) 0%,
+      hsl(25, 95%, 58%) 15%,
+      hsl(45, 95%, 55%) 30%,
+      hsl(145, 70%, 50%) 45%,
+      hsl(210, 90%, 60%) 60%,
+      hsl(270, 70%, 60%) 75%,
+      hsl(330, 85%, 65%) 90%,
+      hsl(0, 85%, 60%) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: rainbow-shift 8s linear infinite;
+  }
+
+  @keyframes rainbow-shift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+
+  /* Floating animation for decorations */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: -3s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+
+  /* Bounce animation */
+  .bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes bounce-in {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Pop animation for correct answers */
+  .pop {
+    animation: pop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+  /* Shake animation for hints */
+  .shake {
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  }
+
+  @keyframes shake {
+    10%, 90% { transform: translateX(-2px); }
+    20%, 80% { transform: translateX(4px); }
+    30%, 50%, 70% { transform: translateX(-6px); }
+    40%, 60% { transform: translateX(6px); }
+  }
+
+  /* Wiggle animation */
+  .wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  /* Pulse glow */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+    }
+  }
+
+  /* Star spin */
+  .star-spin {
+    animation: star-spin 3s linear infinite;
+  }
+
+  @keyframes star-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Fade up animation */
+  .fade-up {
+    animation: fade-up 0.5s ease-out forwards;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Touch-friendly button states */
+  .touch-button {
+    @apply transition-all duration-200 active:scale-95;
+  }
+
+  /* Disable text selection on interactive elements */
+  .no-select {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  /* Prevent scroll on tracing canvas */
+  .touch-none {
+    touch-action: none;
+  }
+
+  /* Card shadows */
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Button shadows */
+  .button-shadow {
+    box-shadow: var(--shadow-button);
+  }
+
+  /* Rainbow card backgrounds */
+  .bg-rainbow-red { background-color: hsl(var(--rainbow-red)); }
+  .bg-rainbow-orange { background-color: hsl(var(--rainbow-orange)); }
+  .bg-rainbow-yellow { background-color: hsl(var(--rainbow-yellow)); }
+  .bg-rainbow-green { background-color: hsl(var(--rainbow-green)); }
+  .bg-rainbow-teal { background-color: hsl(var(--rainbow-teal)); }
+  .bg-rainbow-blue { background-color: hsl(var(--rainbow-blue)); }
+  .bg-rainbow-purple { background-color: hsl(var(--rainbow-purple)); }
+  .bg-rainbow-pink { background-color: hsl(var(--rainbow-pink)); }
+
+  /* Text colors for rainbow */
+  .text-rainbow-red { color: hsl(var(--rainbow-red)); }
+  .text-rainbow-green { color: hsl(var(--rainbow-green)); }
+  .text-rainbow-blue { color: hsl(var(--rainbow-blue)); }
 }
